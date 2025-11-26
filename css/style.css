@@ -1,27 +1,35 @@
+/* =========================================================
+   RESET BÁSICO
+   Remove margens/paddings padrões e ajusta box-sizing
+   ========================================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
+/* =========================================================
+   CONFIGURAÇÕES DO BODY
+   - Define a fonte
+   - Aplica o fundo vermelho natalino com brilhos
+   ========================================================= */
+body {
+    font-family: "League Spartan", sans-serif;
     min-height: 100%;;
     margin: 0;
+    color: white;
 }
 
-body {
-  font-family: "League Spartan", sans-serif;
-  
-  display: flex;
-  flex-direction: column;
-  
-}
-
-main {
-  flex: 1;
-  margin: 0;
-  padding: 0;
-    
+/* =========================================================
+   HEADER
+   - Faixa superior vermelha
+   - Centraliza logo e texto "APRESENTA"
+   ========================================================= */
+.header {
+    width: 100%;
+    background-image: url("../assets/img/VERMELHO-TOPO.png");
+    padding: 10px 0;
+    text-align: center;
 }
 
 .logo {
@@ -31,14 +39,7 @@ main {
     display: block;
 }
 
-header {
-    width: 100%;
-    padding: 15px 0;
-    text-align: center;
-    background-image: url("../assets/img/VERMELHO-TOPO.png");
-}
-
-header .apresenta {
+.apresenta {
     font-family: "League Spartan", sans-serif;
     font-weight: 900;      
     font-size: 35px;       
@@ -49,26 +50,201 @@ header .apresenta {
     text-transform: uppercase;
 }
 
-footer {
-    width: 100%;
-    margin: 0;
-    padding: 40px 0 20px;;
-    text-align: center;
-    background-image: url("../assets/img/VERMELHO-TOPO.png");
-}
-
-.fabrica-do-papai-noel {
+/* =========================================================
+   SEÇÃO PRINCIPAL: FÁBRICA DO PAPAI NOEL
+   - Layout em duas colunas
+   - Espaçamento e alinhamento
+   ========================================================= */
+.verde-noel {
   background-image: url("../assets/img/VERDE.png");
-   background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 350px; 
   
+    background-repeat: no-repeat;
+    background-size: cover;      /* cobre toda a área */
+    background-position: top center;
+
+    min-height: 100vh;           /* garante altura mínima cheia */
+    width: 100%;                 /* ocupa toda a largura */
+    padding-bottom: 80px;
+     padding-top: 100px;  
 }
 
-.img-papai-noel {
-  width: 250px;
-    height: auto;
-    margin: 20px auto 0;
-    ;
+
+.img-cinema{
+  width: 25%; 
+    margin-top: 100px; 
+    margin-bottom: 20px;
 }
+.bloco-filmes {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    
+}
+
+.filmes-card {
+  
+   width: 20%; /* Deixa alinhado com o design */
+    background: white;
+    color: #013220;
+    padding: 10px 0px;
+    border-radius: 12px; /* Arredondamento */
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px; /* Espaço entre cards */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+    
+}
+
+.filmes-card.verde {
+    background: #013220;
+    color: white;
+}
+
+.container-noel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* =========================================================
+   COLUNA ESQUERDA
+   - Contém o título e os cards brancos
+   ========================================================= */
+.col-esq {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+    margin-left: 70px;
+    
+}
+
+/* Imagem "Fábrica do Papai Noel" */
+.img-papai-noel {
+    width: 70%; 
+    margin-top: 300px; 
+    margin-bottom: 20px;
+    margin-left: 400px;
+}
+
+/* =========================================================
+   CARDS BRANCOS DA COLUNA ESQUERDA
+   ========================================================= */
+.card {
+    width: 70%; /* Deixa alinhado com o design */
+    background: white;
+    color: #013220;
+    padding: 10px 0px;
+    border-radius: 12px; /* Arredondamento */
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px; /* Espaço entre cards */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+    transform: translateX(200px);
+}
+
+/* Texto pequeno abaixo dos cards */
+.card-info {
+    font-size: 16px;
+    margin-top: 5px;
+    transform: translateX(200px);
+}
+
+/* =========================================================
+   COLUNA DIREITA
+   - Texto descritivo
+   - Tabela
+   - Botão de inscrição
+   ========================================================= */
+.col-dir {
+    width: 40%;
+    display: flex;               /* Ativa flexbox */
+    flex-direction: column;      /* Mantém tudo em coluna */
+    align-items: center;         /* Centraliza horizontalmente */
+    margin-left: 500px;
+}
+
+/* Texto do parágrafo */
+.texto {
+    font-size: 19px;
+    line-height: 1.2; /* Maior leitura */
+    margin-bottom: 30px;
+    margin-top: 230px;
+    margin-left: -200px;
+    
+}
+
+/* =========================================================
+   TABELA DE SESSÕES E HORÁRIOS
+   ========================================================= */
+.tabela {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaçamento interno */
+    margin-bottom: 10px;
+    margin-top: -20px;
+    margin-left: -200px;
+    
+}
+
+/* Cabeçalho da tabela */
+.tabela th {
+    background: white;
+    color: #013220; /* Verde natal */
+    padding: 12px;
+    font-size: 18px;
+    
+}
+
+/* Células da tabela */
+.tabela td {
+     /* Vermelho transparente */
+    padding: 14px;
+    font-size: 19px;
+    border: 1px solid rgba(255,255,255,0.4); /* Borda clara */
+    text-align: center;
+}
+
+/* =========================================================
+   BOTÃO DE INSCRIÇÃO
+   ========================================================= */
+.btn-inscricao {
+    display: inline-block;
+    background: white;
+    color: #013220; /* Verde natal */
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 14px;
+    text-decoration: none; /* Remove sublinhado */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
+    margin-top: -2px;
+    margin-left: -200px;
+    
+}
+
+/* Efeito no hover */
+.btn-inscricao:hover {
+    transform: scale(1.05); /* Aumenta levemente */
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    background-image: url("../assets/img/VERMELHO-TOPO.png");
+    padding: 30px 0;
+    text-align: center;
+    
+}
+
+

@@ -18,6 +18,7 @@ body {
 .header {
     width: 100%;
     background-image: url("../assets/img/VERMELHO-TOPO.png");
+    background-size: contain;
     padding: 10px 0;
     text-align: center;
 }
@@ -40,6 +41,42 @@ body {
     text-transform: uppercase;
 }
 
+.card-header {
+    width: 18%; 
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    color: #013220;
+    padding: 10px 0px;
+    border-radius: 12px; 
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 50px;
+    margin-bottom: 100px; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+    margin-left: 620px;
+}
+
+.arrow {
+    color: white;               
+    text-align: center;        
+    margin: 20px auto;          
+    margin-bottom: 10px;
+    margin-top: -50px;
+    animation: descer 1.3s infinite ease-in-out;
+    cursor: default;          
+}
+
+/* animação descendo e subindo */
+@keyframes descer {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(10px); opacity: 0.6; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+    
+
+
+
 /* =========================================================
             SEÇÃO VERDE: CINEMA E FÁBRICA DO PAPAI NOEL 
    ========================================================= */
@@ -53,6 +90,183 @@ body {
     padding-bottom: 80px;
     padding-top: 100px;  
 }
+
+/* =========================================================
+                FABRICA DO PAPAI NOEL
+   ========================================================= */
+
+.container-noel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* coluna esquerda */
+.col-esq {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -250px;
+    margin-left: -30px;
+    
+}
+
+/* img fabrica do papai noel */
+.img-papai-noel {
+    width: 70%; 
+    margin-top: 300px; 
+    margin-bottom: 20px;
+    margin-left: 400px;
+}
+
+/* cards brancos da coluna esquerda */
+.card {
+    width: 70%; 
+    background: white;
+    color: #013220;
+    padding: 10px 0px;
+    border-radius: 12px; 
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+    transform: translateX(200px);
+}
+.card:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
+/* texto info abaixo dos cards */
+.card-info {
+    font-size: 16px;
+    margin-top: 5px;
+    transform: translateX(200px);
+}
+
+/* coluna direita - Texto descritivo - tabela - botao de inscriçao */
+.col-dir {
+    width: 100%;
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;
+    margin-top: -150px;         
+    margin-left: 400px;
+}
+
+/* texto do paragrafo */
+.noel-text {
+    font-size: 22px;
+    line-height: 1.2; 
+    margin-bottom: 30px;
+    margin-top: 230px;
+    margin-left: -200px;
+    
+}
+
+/* tabela e horarios */
+.tabela {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -200px;
+    background: transparent; /* deixamos transparente */
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 17px;
+    transition: 0.3s ease; /* suave */
+    
+}
+
+.tabela:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
+
+/* cabeçalho da tabela */
+.tabela th {
+    background: #013220;
+    padding: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    
+}
+
+/* ceulas da tabela */
+.tabela td {
+    padding: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    vertical-align: top;
+}
+
+.tabela tr {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/* botao de inscriçao */
+.btn-inscricao {
+    display: inline-block;
+    background: white;
+    color: #013220; 
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 14px;
+    text-decoration: none; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+     isolation: isolate;
+    margin-top: -2px;
+    margin-left: -200px;
+    transition: 0.3s ease;
+}
+
+/* brilho */
+.btn-inscricao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;                    /* começa fora da esquerda */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0s;
+}
+
+/* Efeito dourado */
+.btn-inscricao:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    color: #013220;
+    transform: scale(1.05);
+}
+
+/* animação do brilho passando */
+.btn-inscricao:hover::before {
+    animation: shine 0.8s forwards;
+}
+
+/* keyframes */
+@keyframes shine {
+    0%   { left: -120%; }
+    100% { left: 150%; }
+}
+
 
 /* =========================================================
                 CINEMA 
@@ -85,6 +299,10 @@ body {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
     
 }
+.filmes-card:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
 
 .filmes-card.verde {
     background: #013220;
@@ -92,134 +310,13 @@ body {
 }
 
 
-/* =========================================================
-                FABRICA DO PAPAI NOEL
-   ========================================================= */
-
-.container-noel {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 90%;
-    margin: 0 auto;
-    position: relative;
-}
-
-
-/* coluna esquerda */
-.col-esq {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -100px;
-    margin-left: 70px;
-    
-}
-
-/* img fabrica do papai noel */
-.img-papai-noel {
-    width: 70%; 
-    margin-top: 300px; 
-    margin-bottom: 20px;
-    margin-left: 400px;
-}
-
-/* cards brancos da coluna esquerda */
-.card {
-    width: 70%; 
-    background: white;
-    color: #013220;
-    padding: 10px 0px;
-    border-radius: 12px; 
-    font-size: 19px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 10px; 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
-    transform: translateX(200px);
-}
-
-/* texto info abaixo dos cards */
-.card-info {
-    font-size: 16px;
-    margin-top: 5px;
-    transform: translateX(200px);
-}
-
-/* coluna direita - Texto descritivo - tabela - botao de inscriçao */
-.col-dir {
-    width: 40%;
-    display: flex;               
-    flex-direction: column;      
-    align-items: center;         
-    margin-left: 500px;
-}
-
-/* texto do paragrafo */
-.texto {
-    font-size: 19px;
-    line-height: 1.2; 
-    margin-bottom: 30px;
-    margin-top: 230px;
-    margin-left: -200px;
-    
-}
-
-/* tabela e horarios */
-.tabela {
-    width: 100%;
-    border-collapse: collapse; 
-    margin-bottom: 10px;
-    margin-top: -20px;
-    margin-left: -200px;
-    
-}
-
-/* cabeçalho da tabela */
-.tabela th {
-    background: white;
-    color: #013220; /* Verde natal */
-    padding: 12px;
-    font-size: 18px;
-    
-}
-
-/* ceulas da tabela */
-.tabela td {
-    padding: 14px;
-    font-size: 19px;
-    border: 1px solid rgba(255,255,255,0.4); 
-    text-align: center;
-}
-
-/* botao de inscriçao */
-.btn-inscricao {
-    display: inline-block;
-    background: white;
-    color: #013220; 
-    padding: 18px 40px;
-    font-size: 20px;
-    font-weight: 900;
-    border-radius: 14px;
-    text-decoration: none; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-    margin-top: -2px;
-    margin-left: -200px;
-    
-}
-
-/* efeito no hover */
-.btn-inscricao:hover {
-    transform: scale(1.05); 
-}
 
 
 /* =========================================================
                 NATAL NOS MUNICIPIOS
    ========================================================= */
 .lilas-noel {
-    background-image: url("../assets/img/LILÁS.png");
+    background-image: url("../assets/img/VERDE.png");
     background-repeat: no-repeat;
     background-size: cover;      
     background-position: top center;
@@ -231,27 +328,57 @@ body {
 
 .img-municip {
     width: 25%; 
-     
-    margin-bottom: 20px;
-    margin-left: 700px;
+    margin-left: 560px;
+    margin-bottom: 70px;
+}
+.municip-card {
+    width: 15%; 
+    background: white;
+    color: #013220;
+    padding: 10px 0px;
+    border-radius: 12px; 
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+    margin-left: 630px;
+    margin-bottom: -50px;
+    margin-top: -50px;
+}
+.municip-card:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
+.municip-text {
+    width: 70%;
+    margin: 0 auto;       /* centraliza horizontal */
+    text-align: justify;   /* centraliza o texto */
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: white;
+    margin-left: 270px;
+    margin-bottom: 70px;
+    margin-top: 80px; /* ajuste se quiser aproximar ou distanciar */
 }
     
 /*    tabela  */
-table.programacao {
+table.municip-programacao {
     width: 60%;
     border-collapse: collapse;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(2px);
+    background: transparent; /* deixamos transparente */
     border-radius: 6px;
     overflow: hidden;
     font-size: 17px;
     margin-top: 0px;
     margin-left: 350px;
+    transition: 0.3s ease; /* suave */
 }
 
+
 /* cabeçalho */ 
-table.programacao thead th {
-    background: #4d0a68;;
+table.municip-programacao thead th {
+    background: #013220;
     padding: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -259,32 +386,96 @@ table.programacao thead th {
     color: #fff;
 }
 
+
 /* celulas */
-table.programacao td {
+table.municip-programacao td {
     padding: 30px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     vertical-align: top;
 }
 
+
 /* Linhas alternadas */
-table.programacao tr:nth-child(even) {
-    background: rgba(255,255,255,0.04);
-}
+
 
 /* hover */
-table.programacao tr:hover {
-    background: rgba(255,255,255,0.10);
-    transition: 0.2s;
+table.municip-programacao tr:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
+
+/* =========================================================
+                NATAL NOS CETIS
+   ========================================================= */
+
+.img-cetis {
+    width: 25%; 
+    margin-left: 560px;
+    margin-bottom: 70px;
+}
+
+.cetis-text {
+    width: 70%;
+    margin: 0 auto;       /* centraliza horizontal */
+    text-align: justify;   /* centraliza o texto */
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: white;
+    margin-left: 270px;
+    margin-bottom: 70px;
+    margin-top: 80px; /* ajuste se quiser aproximar ou distanciar */
+}
+    
+/*    tabela  */
+table.cetis-programacao {
+    width: 60%;
+    border-collapse: collapse;
+    background: transparent; /* deixamos transparente */
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 17px;
+    margin-top: 0px;
+    margin-left: 350px;
+    transition: 0.3s ease; /* suave */
 }
 
 
+/* cabeçalho */ 
+table.cetis-programacao thead th {
+    background: #013220;
+    padding: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+}
+
+
+/* celulas */
+table.cetis-programacao td {
+    padding: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    vertical-align: top;
+}
+
+
+/* Linhas alternadas */
+
+
+/* hover */
+table.cetis-programacao tr:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
 
 
 /* =========================================================
                 FOOTER
-   ========================================================= */
+   ========================================================= 
 footer {
-    background-image: url("../assets/img/VERMELHO-TOPO.png");
+    
+    background-image: url("../assets/img/VERDE.png");
     padding: 30px 0;
     text-align: center;
-}
+}*/

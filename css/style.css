@@ -1,74 +1,202 @@
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-    min-height: 100%;;
-    margin: 0;
+html {
+  min-height: 100%;
+  margin: 0;
 }
+
 
 body {
-  font-family: "League Spartan", sans-serif;
-  
-  display: flex;
-  flex-direction: column;
-  
-}
-
-main {
-  flex: 1;
   margin: 0;
   padding: 0;
-    
-}
-
-.logo {
-    width: 850px;
-    height: auto;
-    margin: 20px auto 0;
-    display: block;
+  font-family: "League Spartan", sans-serif;
+  background: url("../assets/img/VERMELHO-TOPO.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 header {
-    width: 100%;
-    padding: 15px 0;
-    text-align: center;
-    background-image: url("../assets/img/VERMELHO-TOPO.png");
+  text-align: center;
+  padding: 40px 20px;
 }
 
-header .apresenta {
-    font-family: "League Spartan", sans-serif;
-    font-weight: 900;      
-    font-size: 35px;       
-    color: #ffffff;
-    letter-spacing: 1px; 
-    margin: 0;   
-    margin-top: 20px;
-    text-transform: uppercase;
+header .logo {
+  width: 100px;
 }
 
+header p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.cards > div {
+  padding: 25px;
+  border-radius: 18px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(1px);
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.cards > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+
+.cards img {
+  width: 220px;
+  margin-bottom: 12px;
+}
+
+.btn-toggle {
+  margin-top: 12px;
+  background: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #000;
+}
+
+
+.btn-toggle:hover {
+  background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    transition: 0.4s ease;
+}
+
+.card-info {
+  margin-top: 12px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  text-align: justify;
+}
+
+/* ----- abrir card ----- */
+.open .card-info {
+  margin-top: 14px;
+}
+
+.info-item {
+  text-align: left;
+  background: rgba(255,255,255,0.12);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border-left: 4px solid #ffd34d;
+}
+
+
+/* ----- backgrounds cards ----- */
+.card-cinema,
+.card-arvore-de-natal,
+.card-vila,
+.card-criancas,
+.card-cristo,
+.card-feira,
+.card-concerto,
+.card-jazz,
+.card-oratorio {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+  url("../assets/img/VERDE.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cards > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  header .logo {
+    width: 200px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+}
+
+/* FOOTER */
 footer {
-    width: 100%;
-    margin: 0;
-    padding: 40px 0 20px;;
-    text-align: center;
-    background-image: url("../assets/img/VERMELHO-TOPO.png");
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 60px;
 }
 
-.fabrica-do-papai-noel {
-  background-image: url("../assets/img/VERDE.png");
-   background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 350px; 
-  
+footer .logo-footer {
+  width: 9000px; 
+  max-width: 80%;  
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+  transition: 0.3s ease;
 }
 
-.img-papai-noel {
-  width: 250px;
-    height: auto;
-    margin: 20px auto 0;
-    ;
+footer .logo-footer:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.55));
+}
+
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+/* ----- responsividade ----- */
+@media (max-width: 600px) {
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-box {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .info-full {
+        font-size: 1rem;
+    }
 }

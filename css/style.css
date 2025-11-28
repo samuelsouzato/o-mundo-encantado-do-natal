@@ -6,9 +6,9 @@
 
 body {
     font-family: "League Spartan", sans-serif;
-    min-height: 100%;;
-    margin: 0;
+    min-height: 100vh;
     color: white;
+    overflow-x: hidden;
 }
 
 
@@ -16,64 +16,57 @@ body {
                 HEADER
    ========================================================= */
 .header {
-    width: 100%;
+     width: 100%;
     background-image: url("../assets/img/VERMELHO-TOPO.png");
-    background-size: contain;
-    padding: 10px 0;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0 50px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
     width: 850px;
-    height: auto;
+    max-width: 90%;
     margin: 20px auto 0;
-    display: block;
 }
 
 .apresenta {
-    font-family: "League Spartan", sans-serif;
-    font-weight: 900;      
-    font-size: 35px;       
-    color: #ffffff;
-    letter-spacing: 1px; 
-    margin: 0;   
+    font-weight: 900;
+    font-size: 35px;
+    letter-spacing: 1px;
     margin-top: 20px;
     text-transform: uppercase;
 }
 
 .card-header {
-    width: 18%; 
+    width: fit-content;
+    min-width: 250px;
     background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
     color: #013220;
-    padding: 10px 0px;
-    border-radius: 12px; 
+    padding: 10px 30px;
+    border-radius: 12px;
     font-size: 18px;
     font-weight: 600;
     text-align: center;
     line-height: 1.2;
-    margin-top: 50px;
-    margin-bottom: 100px; 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
-    margin-left: 620px;
+    margin: 30px auto 60px auto;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
 .arrow {
-    color: white;               
-    text-align: center;        
-    margin: 20px auto;          
-    margin-bottom: 10px;
-    margin-top: -50px;
+    color: white;
+    margin-top: -30px;
     animation: descer 1.3s infinite ease-in-out;
-    cursor: default;          
 }
 
-/* animação descendo e subindo */
 @keyframes descer {
     0% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(10px); opacity: 0.6; }
     100% { transform: translateY(0); opacity: 1; }
-}
-    
+}  
 
 
 
@@ -83,12 +76,11 @@ body {
 .verde-noel {
     background-image: url("../assets/img/VERDE.png");
     background-repeat: no-repeat;
-    background-size: cover;      
+    background-size: cover;
     background-position: top center;
-    min-height: 100vh;           
-    width: 100%;                 
     padding-bottom: 80px;
-    padding-top: 100px;  
+    padding-top: 50px;
+    width: 100%; 
 }
 
 /* =========================================================
@@ -97,116 +89,103 @@ body {
 
 .container-noel {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
+    gap: 40px;
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
 }
 
 
 /* coluna esquerda */
 .col-esq {
-    width: 30%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -250px;
-    margin-left: -30px;
+    margin-top: -150px;
+    min-width: 300px;
     
 }
 
 /* img fabrica do papai noel */
 .img-papai-noel {
-    width: 70%; 
-    margin-top: 300px; 
-    margin-bottom: 20px;
-    margin-left: 400px;
+    width: 70%;
+    margin-top: 250px; /* Tente -200px para subir mais, ou -100px para descer */
+    
+    /* Se quiser empurrar para a direita sem quebrar: */
+    
 }
 
 /* cards brancos da coluna esquerda */
 .card {
-    width: 70%; 
+    width: 50%;
     background: white;
     color: #013220;
-    padding: 10px 0px;
-    border-radius: 12px; 
+    padding: 10px 0;
+    border-radius: 12px;
     font-size: 19px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 10px; 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
-    transform: translateX(200px);
-}
-.card:hover {
-    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     transition: 0.4s ease;
 }
-/* texto info abaixo dos cards */
-.card-info {
-    font-size: 16px;
-    margin-top: 5px;
-    transform: translateX(200px);
+
+.card:hover {
+    background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
 }
+
 
 /* coluna direita - Texto descritivo - tabela - botao de inscriçao */
 .col-dir {
-    width: 100%;
-    display: flex;               
-    flex-direction: column;      
-    align-items: center;
-    margin-top: -150px;         
-    margin-left: 400px;
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* texto do paragrafo */
 .noel-text {
-    font-size: 22px;
-    line-height: 1.2; 
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: justify;
     margin-bottom: 30px;
-    margin-top: 230px;
-    margin-left: -200px;
-    
+    margin-top: 50px;
 }
+
 
 /* tabela e horarios */
 .tabela {
     width: 100%;
-    border-collapse: collapse; 
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-left: -200px;
-    background: transparent; /* deixamos transparente */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: transparent;
     border-radius: 6px;
     overflow: hidden;
-    font-size: 17px;
-    transition: 0.3s ease; /* suave */
-    
+    font-size: 18px;
+    transition: 0.3s ease;
 }
 
 .tabela:hover {
     background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
-    transition: 0.4s ease;
 }
+
 
 /* cabeçalho da tabela */
 .tabela th {
     background: #013220;
     padding: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 18px;
     color: #fff;
-    
+    text-transform: uppercase;
 }
-
 /* ceulas da tabela */
 .tabela td {
-    padding: 25px;
+    padding: 20px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    vertical-align: top;
+    text-align: center;
 }
-
 .tabela tr {
     text-align: center;
     font-size: 18px;
@@ -215,44 +194,38 @@ body {
 
 /* botao de inscriçao */
 .btn-inscricao {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     background: white;
-    color: #013220; 
+    color: #013220;
     padding: 18px 40px;
     font-size: 20px;
     font-weight: 900;
     border-radius: 14px;
-    text-decoration: none; 
+    text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 20px auto 0 auto;
+    position: relative;
     overflow: hidden;
-     isolation: isolate;
-    margin-top: -2px;
-    margin-left: -200px;
     transition: 0.3s ease;
 }
 
-/* brilho */
+
 .btn-inscricao::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -120%;                    /* começa fora da esquerda */
+    left: -120%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.8),
-        transparent
-    );
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
     transform: skewX(-20deg);
-    transition: 0s;
 }
+
 
 /* Efeito dourado */
 .btn-inscricao:hover {
     background: linear-gradient(90deg, #caa651, #f6e08a, #caa651);
-    color: #013220;
     transform: scale(1.05);
 }
 
@@ -366,7 +339,7 @@ body {
 table.municip-programacao {
     width: 60%;
     border-collapse: collapse;
-    background: transparent; /* deixamos transparente */
+    background-color: #20000070; /* deixamos transparente */
     border-radius: 6px;
     overflow: hidden;
     font-size: 17px;
@@ -378,7 +351,7 @@ table.municip-programacao {
 
 /* cabeçalho */ 
 table.municip-programacao thead th {
-    background: #013220;
+    background: #013220a7;
     padding: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -431,7 +404,7 @@ table.municip-programacao tr:hover {
 table.cetis-programacao {
     width: 60%;
     border-collapse: collapse;
-    background: transparent; /* deixamos transparente */
+    background-color: #20000070;
     border-radius: 6px;
     overflow: hidden;
     font-size: 17px;
@@ -443,7 +416,7 @@ table.cetis-programacao {
 
 /* cabeçalho */ 
 table.cetis-programacao thead th {
-    background: #013220;
+    background: #013220a7;
     padding: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -469,6 +442,57 @@ table.cetis-programacao tr:hover {
     transition: 0.4s ease;
 }
 
+
+/* =========================================================
+   🚑 EMERGÊNCIA: IPHONE 5 / SE (Telas menores que 380px)
+   ========================================================= */
+@media (max-width: 380px) {
+    
+    /* 1. Remove limites de largura que estouram a tela */
+    .col-esq, .col-dir, .card, .img-papai-noel, .municip-card {
+        min-width: 0 !important; /* IMPORTANTE: Deixa encolher o quanto precisar */
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 2. Ajusta container para não ter folga lateral */
+    .container-noel, .header, .verde-noel, .lilas-noel {
+        width: 100% !important;
+        padding-left: 10px !important; /* Reduz padding para ganhar espaço */
+        padding-right: 10px !important;
+        box-sizing: border-box;
+    }
+
+    /* 3. Diminui Fontes para caber na tela pequena */
+    .apresenta {
+        font-size: 22px !important; /* Título menor */
+    }
+
+    .card, .municip-card, .btn-inscricao {
+        font-size: 16px !important; /* Texto dos botões/cards menor */
+        padding: 10px !important;
+        width: 100% !important;
+    }
+
+    .noel-text, .municip-text, .cetis-text {
+        font-size: 16px !important; /* Texto corrido menor */
+        text-align: left !important; /* Justificado fica horrível no iPhone 5 */
+        word-spacing: normal !important;
+    }
+
+    /* 4. Tabela: Fonte minúscula para tentar caber */
+    th, td {
+        padding: 5px 2px !important;
+        font-size: 11px !important;
+    }
+    
+    /* 5. Ajuste da imagem principal */
+    .img-papai-noel {
+        width: 80% !important; /* Reduz um pouco pra centralizar bonito */
+        margin: 0 auto 20px auto !important;
+    }
+}
 
 /* =========================================================
                 FOOTER

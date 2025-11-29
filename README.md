@@ -5,7 +5,7 @@ o-mundo-encantado-do-natal/
 │
 │
 ├── assets/   
-│   └── imgy  # Imagnes Necessárias.
+│   └── img  # Imagnes Necessárias.
 │
 │
 ├── css/   

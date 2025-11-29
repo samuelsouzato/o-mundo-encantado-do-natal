@@ -13,37 +13,23 @@ body {
 }
 
 /* =========================================================
-            IMAGENS GERAIS ANIMADAS
+            IMAGENS GERAIS (ESTÁTICAS)
    ========================================================= */
 img {
     max-width: 100%;
     height: auto;
     display: block;
     
-    /* ANIMAÇÃO GLOBAL: Todas as imagens pulsam suavemente */
-    animation: pulsoOrganico 3.6s infinite ease-in-out;
+    /* Sem animação contínua aqui */
+    
+    /* Mantém a transição para o efeito de mouse ficar suave */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Efeito Hover (Só ativa ao passar o mouse) */
 img:hover {
     transform: scale(1.03) translateY(-3px);
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); 
-}
-
-/* DEFINIÇÃO DA ANIMAÇÃO DE PULSO */
-@keyframes pulsoOrganico {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
-    }
-    50% {
-        transform: scale(1.07); 
-        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
-    }
-    100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
-    }
 }
 
 /* =========================================================
@@ -192,7 +178,7 @@ img:hover {
     line-height: 1.5;
 }
 
-/* BOTÕES */
+/* BOTÕES TEATRO */
 .btn-teatro {
     display: flex;             
     justify-content: center;   
@@ -215,10 +201,8 @@ img:hover {
     z-index: 1;
 }
 
-
-
 .btn-teatro:hover {
-  background: linear-gradient(90deg, #d19b1c, #fcdf69, #d19b1c);
+    background: linear-gradient(90deg, #d19b1c, #fcdf69, #d19b1c);
     transition: 0.4s ease;
 }
 
@@ -233,7 +217,7 @@ img:hover {
     transform: skewX(-20deg);
 }
 
-/* animação do brilho passando */
+/* animação do brilho passando no hover */
 .btn-teatro:hover::before {
     animation: shine 0.7s forwards;
 }
@@ -286,15 +270,12 @@ img:hover {
 }
 
 /* RESPONSIVIDADE CARDS */
-/* Só muda para 2 colunas se a tela for menor que 900px (Tablets) 
-   Isso garante que notebooks vejam 3 colunas */
 @media (max-width: 900px) {
     .cards-teatro {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Celular: 1 coluna */
 @media (max-width: 600px) {
     .cards-teatro {
         grid-template-columns: 1fr;

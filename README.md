@@ -1,5 +1,11 @@
+## 📂 Estrutura do Projeto
+
+```
+o-mundo-encantado-do-natal/
+│
+│
 ├── assets/   
-│   └── imgy  # Imagnes Necessárias.
+│   └── img            # Imagnes Necessárias.
 │
 │
 ├── css/   
@@ -15,3 +21,5 @@
 │
 │
 └── index.html          # Arquivo Principal
+
+```
